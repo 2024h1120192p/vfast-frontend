@@ -1,7 +1,6 @@
-$("#bookingForm").on('submit', function (e) {
+$("#bookingForm").on('reset', function (e) {
     e.preventDefault();
-
-    if($("#firstName")[0].value == false){
+    if($("#button[type='reset'")[0].value == false){
         alert("Please check the box to agree with the Terms and Conditions.");
     }
     else{
@@ -17,7 +16,7 @@ $("#bookingForm").on('submit', function (e) {
     
         $.ajax({
             type: "POST",
-            url: "http://172.17.49.100:8000/book",
+            url: "http://vfast.online:8000/book",
             data: JSON.stringify(data),
             contentType : "application/json",
             dataType: "text",
@@ -26,5 +25,7 @@ $("#bookingForm").on('submit', function (e) {
                 alert("The form was submitted successfully.")
             }
         });
+
+        e.target.reset();
     }
 });

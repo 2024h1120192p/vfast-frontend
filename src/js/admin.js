@@ -2,7 +2,7 @@ let table_body = $("#dashboard-table-body")[0];
 
 $.ajax({
     type: "GET",
-    url: "http://172.17.49.100:8000/admin",
+    url: "http://vfast.online:8000/admin",
     dataType: "text",
     success: function (response) {
         data = JSON.parse(response).data;
