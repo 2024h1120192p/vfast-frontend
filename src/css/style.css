@@ -360,12 +360,13 @@ ol {
 }
 
 .top-nav .tn-left li i {
-	color: #dfa974;
+	color: #f0a413;
 	margin-right: 4px;
 }
 
 .top-nav .tn-right {
 	text-align: right;
+	
 }
 
 .top-nav .tn-right .top-social {
@@ -386,7 +387,7 @@ ol {
 	font-size: 13px;
 	font-weight: 700;
 	padding: 16px 28px 15px;
-	background: #dfa974;
+	background: #f0a413;
 	color: #ffffff;
 	text-transform: uppercase;
 	letter-spacing: 2px;
@@ -518,7 +519,7 @@ ol {
 	top: 52px;
 	width: 100%;
 	height: 2px;
-	background: #dfa974;
+	background: #1A165A;
 	content: "";
 	opacity: 0;
 	-webkit-transition: all 0.3s;
@@ -684,8 +685,8 @@ ol {
 }
 
 .booking-form form .select-option .nice-select:after {
-	border-bottom: 2px solid #dfa974;
-	border-right: 2px solid #dfa974;
+	border-bottom: 2px solid #c874df;
+	border-right: 2px solid #c874df;
 	height: 10px;
 	margin-top: 0;
 	right: 20px;
@@ -1025,7 +1026,7 @@ ol {
 -----------------------*/
 
 .footer-section {
-	background: #222736;
+	background: #d7d2d2;
 }
 
 .footer-section .footer-text {
@@ -1045,7 +1046,7 @@ ol {
 }
 
 .footer-section .footer-text .ft-about p {
-	color: #aaaab3;
+	color: #000000;
 	margin-bottom: 20px;
 }
 
@@ -1086,7 +1087,7 @@ ol {
 
 .footer-section .footer-text .ft-contact ul li {
 	font-size: 16px;
-	color: #aaaab3;
+	color: #000000;
 	line-height: 32px;
 	list-style: none;
 }
