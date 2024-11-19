@@ -1,0 +1,62 @@
+#calendar {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#calendar .fc-view-container {
+    padding: 30px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
+}
+
+.fc-event {
+    height: 100px;
+    background-color: #dfa974;
+    border-color: #dfa974;
+}
+
+.fc-event,
+.fc-event-dot {
+    background-color: #dfa974;
+}
+
+.fc-today {
+    background-color: #fff !important;
+}
+
+.fc-button-primary {
+    background-color: #dfa974 !important;
+    border-color: #dfa974 !important;
+}
+
+.nav-menu li * {
+    text-decoration: none;
+}
+
+.nav-menu a {
+    color: black;    
+}
+
+.nav-menu a :hover {
+    color: #75BFE1;
+}
+
+* a {
+    text-decoration: none !important;
+}
+
+footer * * {
+    border-color: #2B296D !important;
+}
+
+footer .fa-social i {
+    color: #2B296D;
+}
+
+label {
+    font-size: 14px;
+    color: #707079;
+    display: block;
+    margin-bottom: 10px;
+}
