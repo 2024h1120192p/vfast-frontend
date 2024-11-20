@@ -24,47 +24,7 @@
 
     <link rel="stylesheet" href="src/css/style.css" type="text/css">
 
-    <style defer>
-        #calendar {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        #calendar .fc-view-container {
-            padding: 30px;
-            background-color: #fff;
-            -webkit-box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
-            box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
-        }
-
-        .fc-event {
-            height: 100px;
-            background-color: #dfa974;
-            border-color: #dfa974;
-        }
-
-        .fc-event,
-        .fc-event-dot {
-            background-color: #dfa974;
-        }
-
-        .fc-today {
-            background-color: #fff !important;
-        }
-
-        .fc-button-primary {
-            background-color: #dfa974 !important;
-            border-color: #dfa974 !important;
-        }
-
-        .nav-menu li * {
-            text-decoration: none;
-        }
-
-        * a {
-            text-decoration: none;
-        }
-    </style>
+    <link rel="stylesheet" href="src/css/vfast-style.css" type="text/css">
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".nav-menu" data-bs-offset="50">
@@ -81,19 +41,18 @@
                     <div class="col-lg-6">
                         <ul class="tn-left">
                             <li>
-                                <a href="tel:+911596255530" style="text-decoration: none; color: white !important;">
+                                <a href="tel:+911596255530">
                                     <i class="fa fa-phone"></i> (+91) 1596 255 530
                                 </a>
                             </li>
                             <li>
-                                <a href="mailto:vfast@pilani.bits-pilani.ac.in"
-                                    style="text-decoration: none; color: white !important;">
+                                <a href="mailto:vfast@pilani.bits-pilani.ac.in">
                                     <i class="fa fa-envelope"></i> vfast@pilani.bits-pilani.ac.in
                                 </a>
                             </li>
                         </ul>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 pe-0">
                         <div class="tn-right">
                             <div class="top-social">
                                 <!-- <a href="#"><i class="fa fa-facebook"></i></a> -->
@@ -122,11 +81,8 @@
                             <nav class="mainmenu">
                                 <ul>
                                     <li class="active"><a href="/">Home</a></li>
-
                                     <li><a href="#rooms">Rooms</a></li>
-
-                                    <li><a href="#availability" disabled>Gallery</a></li>
-
+                                    <li><a href="gallery.html">Gallery</a></li>
                                     <li><a href="#about-us">About Us</a></li>
                                     <!-- <li>
                                             <a href="./pages.html">Pages</a>
@@ -141,7 +97,12 @@
                                     <li><a href="contact.html">Contact</a></li>
                                 </ul>
                             </nav>
-                            <i class="fa fa-user-circle" aria-hidden="true" style="font-size: large;"></i>
+                            <span class="login-btn">
+                                <a href="login.html">
+                                    <i class="fa fa-user-circle fa-lg" aria-hidden="true"></i>
+                                    Login
+                                </a>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -182,24 +143,25 @@
                             <h2>VFAST <br />Hostel</h2>
                         </div>
                         <p class="f-para">The VFAST (visiting faculty and student transit) Hostel at BITS Pilani offers
-                            comfortable accommodation for visitors, faculty, and staff within the campus. It features
-                            various types of rooms, including standard and deluxe double, and suite accommodations,
-                            equipped with amenities such as air conditioning, Wi-Fi, television, and laundry services.
+                            comfortable accommodation for visitors, faculty, and staff within the campus.</p><br>
+                        <p> It features various types of rooms, including standard and deluxe double, and suite
+                            accommodations, equipped with amenities such as air conditioning, Wi-Fi, television, and
+                            laundry services.
                             Guests can also enjoy meals in the dining area. Conveniently located within the campus,
                             VFAST provides easy access to academic buildings, libraries, and other facilities.
                             Reservations can be made through the online booking system.
                         </p>
-                        
+
                         <!-- <a href="#" class="primary-btn about-btn">Read More</a> -->
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-4 offset-lg-1">
                     <div class="about-pic">
                         <div class="row">
-                            <div class="col-sm-6">
+                            <div class="col-sm-12">
                                 <img src="src/img/about/IMG20240705114652.jpg" alt="">
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-12">
                                 <img src="src/img/about/IMG20240720105010.jpg" alt="">
                             </div>
                         </div>
@@ -367,14 +329,66 @@
     <!-- Home Room Section End -->
 
     <!--<section class="spad" id="availability">
-            <div class="section-title">
-                <span>Availability</span>
-                <h2>Check Availability</h2>
+        <div class="section-title">
+            <span>Availability</span>
+            <h2>Check Availability</h2>
+        </div>
+        <div class="content mb-5 w-100">
+            <div id='calendar' class="w-100"></div>
+        </div>
+    </section> -->
+
+    <!-- Gallery Section Begin -->
+    <section class="gallery-section spad" id="gallery">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <span>Our Gallery</span>
+                        <h2>Discover Our Space</h2>
+                    </div>
+                </div>
             </div>
-            <div class="content mb-5 w-100">
-                <div id='calendar' class="w-100"></div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="gallery-item set-bg" data-setbg="src/img/gallery/gallery-1.jpg">
+                        <div class="gi-text">
+                            <h3>Room Luxury</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="gallery-item set-bg" data-setbg="src/img/gallery/gallery-3.jpg">
+                                <div class="gi-text">
+                                    <h3>Room Luxury</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="gallery-item set-bg" data-setbg="src/img/gallery/gallery-4.jpg">
+                                <div class="gi-text">
+                                    <h3>Room Luxury</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="gallery-item large-item set-bg" data-setbg="src/img/gallery/gallery-2.jpg">
+                        <div class="gi-text">
+                            <h3>Room Luxury</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section> -->
+            <div class="row">
+                <div class="col-12">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Gallery Section End -->
 
     <!-- Footer Section Begin -->
     <footer class="footer-section">
@@ -392,7 +406,7 @@
                             <div class="fa-social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-tripadvisor"></i></a>
+                                <!-- <a href="#"><i class="fa fa-tripadvisor"></i></a> -->
                                 <a href="#"><i class="fa fa-instagram"></i></a>
                                 <a href="#"><i class="fa fa-youtube-play"></i></a>
                             </div>

@@ -24,52 +24,7 @@
 
     <link rel="stylesheet" href="src/css/style.css" type="text/css">
 
-    <style defer>
-        #calendar {
-            max-width: 83%;
-            max-height: 83%;
-            margin: 0 auto;
-        }
-
-        #calendar .fc-view-container {
-            padding: 30px;
-            background-color: #fff;
-            -webkit-box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
-            box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
-        }
-
-        .fc-event {
-            height: 100px;
-            background-color: #dfa974;
-            border-color: #dfa974;
-        }
-
-        .fc-event,
-        .fc-event-dot {
-            background-color: #dfa974;
-        }
-
-        .fc-today {
-            background-color: #fff !important;
-        }
-
-        .fc-button-primary {
-            background-color: #dfa974 !important;
-            border-color: #dfa974 !important;
-        }
-
-        .nav-menu li * {
-            text-decoration: none;
-        }
-        
-        footer * * {
-            border-color: #2B296D !important;
-        }
-
-        footer .fa-social i {
-            color: #2B296D;
-        }
-    </style>
+    <link rel="stylesheet" href="src/css/vfast-style.css" type="text/css">
 </head>
 
 <body>
@@ -102,52 +57,14 @@
                     <div class="col-lg-6">
                         <div class="tn-right">
                             <div class="top-social">
-                                <!-- <a href="#"><i class="fa fa-facebook"></i></a> -->
-                                <!-- <a href="#"><i class="fa fa-twitter"></i></a> -->
-                                <!-- <a href="#"><i class="fa fa-tripadvisor"></i></a> -->
-                                <a href="http://bits-pilani.ac.in"><i class="fa fa-globe fa-lg"></i></a>
+                                <!-- <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-tripadvisor"></i></a> -->
                             </div>
-                            <a href="booking.html" class="bk-btn">Reserve Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="menu-item mt-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-2">
-                        <div class="logo">
-                            <a href="/">
-                                <img src="src/img/logo.png" alt="" height="35">
+                            <a href="http://bits-pilani.ac.in">
+                                <i class="fa fa-globe fa-lg"></i>
                             </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-10">
-                        <div class="nav-menu">
-                            <nav class="mainmenu">
-                                <ul>
-                                    <li><a href="./index.html">Home</a></li>
-
-                                    <li><a href="./index.html#rooms">Rooms</a></li>
-
-                                    <li><a href="./index.html#availability">Availability</a></li>
-
-                                    <li><a href="/gallery.html">Gallery</a></li>
-                                    <!-- <li>
-                                            <a href="./pages.html">Pages</a>
-                                            <ul class="dropdown">
-                                                <li><a href="./room-details.html">Room Details</a></li>
-                                                <li><a href="./blog-details.html">Blog Details</a></li>
-                                                <li><a href="#">Family Room</a></li>
-                                                <li><a href="#">Premium Room</a></li>
-                                            </ul>
-                                        </li> -->
-                                    <!-- <li><a href="./blog.html">News</a></li> -->
-                                    <li class="active"><a href="contact.html">Contact</a></li>
-                                </ul>
-                            </nav>
-                            <i class="fa fa-user-circle fa-lg" aria-hidden="true"></i>
+                            <!-- <a href="booking.html" class="bk-btn">Reserve Now</a> -->
                         </div>
                     </div>
                 </div>
@@ -157,58 +74,27 @@
     <!-- Header End -->
 
     <!-- Contact Section Begin -->
-    <section class="contact-section">
+    <section class="login-section spad">
         <div class="container">
+            <div class="row"></div>
             <div class="row">
-                <div class="col-lg-5 d-flex align-items-center">
-                    <div class="contact-text">
-                        <h2>Contact Info</h2>
+                <div class="col-lg-4 offset-lg-1">
+                    <div class="contact-text h-100 d-lg-grid" style="place-items: center;">
+                        <h2 class="align-middle text-center">Login</h2>
                         <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                                 labore et dolore magna aliqua.</p> -->
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td class="c-o">Address:</td>
-                                    <td>Birla Institute of Technology and Sciences, Pilani, Jhunjhunu, Rajasthan -
-                                        333031</td>
-                                </tr>
-                                <tr>
-                                    <td class="c-o">Phone:</td>
-                                    <td>(+91) 1596 255 530</td>
-                                </tr>
-                                <tr>
-                                    <td class="c-o">Email:</td>
-                                    <td>vfast@pilani.bits-pilani.ac.in</td>
-                                </tr>
-                                <!-- <tr>
-                                        <td class="c-o">Fax:</td>
-                                        <td>+(12) 345 67890</td>
-                                    </tr> -->
-                            </tbody>
-                        </table>
                     </div>
                 </div>
-                <div class="col-lg-7">
-                    <!-- <form action="#" class="contact-form">
+                <div class="col-sm-12 col-md-12 col-lg-5">
+                    <form action="index.html" class="contact-form">
                         <div class="row">
-                            <div class="col-lg-6">
-                                <input type="text" placeholder="Your Name">
-                            </div>
-                            <div class="col-lg-6">
-                                <input type="text" placeholder="Your Email">
-                            </div>
                             <div class="col-lg-12">
-                                <textarea placeholder="Your Message"></textarea>
-                                <button type="submit">Submit Now</button>
+                                <input type="text" placeholder="Email ID">
+                                <input type="text" placeholder="Password">
+                                <button class="w-100" type="submit" style="background-color:#F0A414">Login with BITS Account</button>
                             </div>
                         </div>
-                    </form> -->
-                    <div class="d-block d-lg-none mt-5"></div>
-                    <div class="map mt-0">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3510.9490425059735!2d75.58946917554316!3d28.360390175814455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3913196f39047e9d%3A0x7bbc891c818dfcf2!2sVFAST!5e0!3m2!1sen!2sin!4v1731607158677!5m2!1sen!2sin"
-                            height="470" style="border:0;" allowfullscreen=""></iframe>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
