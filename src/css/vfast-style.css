@@ -34,12 +34,24 @@
     text-decoration: none;
 }
 
-.nav-menu a {
-    color: black;    
+.header-section a{
+    color: white;
 }
 
-.nav-menu a :hover {
-    color: #75BFE1;
+.top-social a{
+    color: #fff5 !important;
+}
+
+.header-section a :hover{
+    color: white !important;
+}
+
+.nav-menu a {
+    color: #000;
+}
+
+.nav-menu .login-btn :hover {
+    color: #75BFE1 !important;
 }
 
 * a {
