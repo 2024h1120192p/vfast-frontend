@@ -297,7 +297,7 @@ function renderGallery(filter = "") {
             img.onload = () => {
                 // Create the column
                 const col = document.createElement("div");
-                col.className = isImageHorizontal(img) ? "col-md-6 mb-3" : "col-md-4 mb-3";
+                col.className = isImageHorizontal(img) ? "col-md-6 mb-3" : "d-none";
 
                 // Bootstrap card for the image
                 const card = `
@@ -323,21 +323,12 @@ const searchBar = document.querySelector("#searchBar");
 const searchForm = document.querySelector("#searchForm");
 
 const roomsCard = document.querySelector("#roomsCard");
-const roomsVideo = document.querySelector("#roomsVideo");
 
 const aboutHeaderSection = document.querySelector(".aboutus-page-section");
 const gallerySection = document.querySelector(".gallery-section");
 
 searchForm.addEventListener("submit", (e)=>{
     e.preventDefault();
-    // console.log("running")
-    // renderGallery(e.target.value);
-    // if(e.target.value === ""){
-    //     rooms.unhide();
-    // }
-    // else{
-    //     rooms.hide()
-    // }
 })
 
 // Attach search functionality
@@ -347,7 +338,6 @@ searchBar.addEventListener("input", (e) => {
     var notEmpty = (e.target.value !== "");
     
     roomsCard.hidden = notEmpty;
-    roomsVideo.hidden = notEmpty;
 
     if(notEmpty){
         if(!aboutHeaderSection.classList.contains("pb-0")){

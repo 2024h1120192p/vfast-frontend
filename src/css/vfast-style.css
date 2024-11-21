@@ -72,3 +72,16 @@ label {
     display: block;
     margin-bottom: 10px;
 }
+
+#roomsCard .ap-service-item .api-text h3{
+    background-color: #0005;
+    backdrop-filter: blur(4px);
+    width: fit-content;
+    margin: auto;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+tr .c-o {
+    width: 180px !important;
+}
