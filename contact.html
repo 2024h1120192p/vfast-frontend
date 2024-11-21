@@ -3,7 +3,7 @@
 
 <head>
     <title>Dashboard</title>
-    <!-- Required meta tags -->
+    
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
@@ -19,57 +19,8 @@
     <link rel="stylesheet" href="src/css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="src/css/slicknav.min.css" type="text/css">
 
-    <link href='src/css/fullcalendar/packages/core/main.css' rel='stylesheet' type="text/css" />
-    <link href='src/css/fullcalendar/packages/daygrid/main.css' rel='stylesheet' type="text/css" />
-
     <link rel="stylesheet" href="src/css/style.css" type="text/css">
-
-    <style defer>
-        #calendar {
-            max-width: 83%;
-            max-height: 83%;
-            margin: 0 auto;
-        }
-
-        #calendar .fc-view-container {
-            padding: 30px;
-            background-color: #fff;
-            -webkit-box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
-            box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
-        }
-
-        .fc-event {
-            height: 100px;
-            background-color: #dfa974;
-            border-color: #dfa974;
-        }
-
-        .fc-event,
-        .fc-event-dot {
-            background-color: #dfa974;
-        }
-
-        .fc-today {
-            background-color: #fff !important;
-        }
-
-        .fc-button-primary {
-            background-color: #dfa974 !important;
-            border-color: #dfa974 !important;
-        }
-
-        .nav-menu li * {
-            text-decoration: none;
-        }
-        
-        footer * * {
-            border-color: #2B296D !important;
-        }
-
-        footer .fa-social i {
-            color: #2B296D;
-        }
-    </style>
+    <link rel="stylesheet" href="src/css/vfast-style.css" type="text/css">
 </head>
 
 <body>
@@ -128,26 +79,18 @@
                             <nav class="mainmenu">
                                 <ul>
                                     <li><a href="./index.html">Home</a></li>
-
                                     <li><a href="./index.html#rooms">Rooms</a></li>
-
-                                    <li><a href="./index.html#availability">Availability</a></li>
-
                                     <li><a href="./gallery.html">Gallery</a></li>
-                                    <!-- <li>
-                                            <a href="./pages.html">Pages</a>
-                                            <ul class="dropdown">
-                                                <li><a href="./room-details.html">Room Details</a></li>
-                                                <li><a href="./blog-details.html">Blog Details</a></li>
-                                                <li><a href="#">Family Room</a></li>
-                                                <li><a href="#">Premium Room</a></li>
-                                            </ul>
-                                        </li> -->
-                                    <!-- <li><a href="./blog.html">News</a></li> -->
+                                    <li><a href="./index.html#about-us">About Us</a></li>
                                     <li class="active"><a href="contact.html">Contact</a></li>
                                 </ul>
                             </nav>
-                            <i class="fa fa-user-circle fa-lg" aria-hidden="true"></i>
+                            <span class="login-btn">
+                                <a href="login.html">
+                                    <i class="fa fa-user-circle fa-lg" aria-hidden="true"></i>
+                                    Login
+                                </a>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -180,29 +123,11 @@
                                     <td class="c-o">Email:</td>
                                     <td>vfast@pilani.bits-pilani.ac.in</td>
                                 </tr>
-                                <!-- <tr>
-                                        <td class="c-o">Fax:</td>
-                                        <td>+(12) 345 67890</td>
-                                    </tr> -->
                             </tbody>
                         </table>
                     </div>
                 </div>
                 <div class="col-lg-7">
-                    <!-- <form action="#" class="contact-form">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <input type="text" placeholder="Your Name">
-                            </div>
-                            <div class="col-lg-6">
-                                <input type="text" placeholder="Your Email">
-                            </div>
-                            <div class="col-lg-12">
-                                <textarea placeholder="Your Message"></textarea>
-                                <button type="submit">Submit Now</button>
-                            </div>
-                        </div>
-                    </form> -->
                     <div class="d-block d-lg-none mt-5"></div>
                     <div class="map mt-0">
                         <iframe
@@ -309,10 +234,6 @@
     <script src="src/js/owl.carousel.min.js"></script>
 
     <script src="src/js/main.js"></script>
-
-    <script src='src/js/fullcalendar/packages/core/main.js'></script>
-    <script src='src/js/fullcalendar/packages/interaction/main.js'></script>
-    <script src='src/js/fullcalendar/packages/daygrid/main.js'></script>
 
     <script defer
         src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
