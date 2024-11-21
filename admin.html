@@ -6,11 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hostel Booking Management Dashboard</title>
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="src/css/bootstrap.min.css" rel="stylesheet">
   <!-- FontAwesome CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+  <link href="src/css/font-awesome.min.css" rel="stylesheet">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="src/css/style.css">
+  <!-- Custom VFAST Styles -->
+  <link rel="stylesheet" href="src/css/vfast-style.css" type="text/css">
 </head>
 
 <body>
@@ -22,26 +24,26 @@
             <img src="src/img/logo.png" alt="" height="35">
         </a>
     </div>
-    <h2 class="mb-4">VFAST Admin</h2>
+    <h2 class="my-3">VFAST Admin</h2>
     <ul class="nav nav-pills flex-column">
       <li class="nav-item mb-2">
         <a class="nav-link text-white active" onclick="showView('dashboard')" role="button">
-          <i class="fa-solid fa-tachometer-alt me-2"></i> Dashboard
+          <i class="fa fa-dashboard"></i> &nbsp; Dashboard
         </a>
       </li>
       <li class="nav-item mb-2">
         <a class="nav-link text-white" onclick="showView('request')" role="button">
-          <i class="fa-solid fa-file-alt me-2"></i> Request Details
+          <i class="fa fa-file"></i> &nbsp; Request Details
         </a>
       </li>
       <li class="nav-item mb-2">
         <a class="nav-link text-white" onclick="showView('availability')" role="button">
-          <i class="fa-solid fa-hotel me-2"></i> Availability
+          <i class="fa fa-check-circle"></i> &nbsp; Availability
         </a>
       </li>
       <li class="nav-item mb-2">
         <a class="nav-link text-white" onclick="showView('rooms')" role="button">
-          <i class="fa-solid fa-door-open me-2"></i> Rooms
+          <i class="fa fa-bed"></i> &nbsp; Rooms
         </a>
       </li>
     </ul>
