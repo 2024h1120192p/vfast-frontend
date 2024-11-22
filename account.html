@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html lang="zxx">
+<!doctype html>
+<html lang="en">
 
 <head>
-    <title>VFAST Gallery</title>
+    <title>Dashboard</title>
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&display=swap" rel="stylesheet">
-
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="src/css/bootstrap.min.css" type="text/css">
+    <!-- Bootstrap CSS v5.3.2 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
     <link rel="stylesheet" href="src/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="src/css/elegant-icons.css" type="text/css">
     <link rel="stylesheet" href="src/css/flaticon.css" type="text/css">
@@ -21,13 +18,12 @@
     <link rel="stylesheet" href="src/css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="src/css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="src/css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="src/css/style.css" type="text/css">
 
-    <!-- Custom VFAST Styles -->
+    <link rel="stylesheet" href="src/css/style.css" type="text/css">
     <link rel="stylesheet" href="src/css/vfast-style.css" type="text/css">
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#roomsCards" data-bs-offset="20">
+<body>
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -42,18 +38,20 @@
         <div class="canvas-close">
             <i class="icon_close"></i>
         </div>
-        <div class="search-icon search-switch">
-            <i class="icon_search"></i>
-        </div>
         <div class="header-configure-area">
-            <a href="#" class="bk-btn">Reserve Now</a>
+            <a href="./booking.html" class="bk-btn">Reserve Now</a>
         </div>
+        <span class="login-btn">
+            <a href="./account.html">
+                <i class="fa fa-user-circle-o fa-lg" aria-hidden="true"></i>
+                Shreyas A
+            </a>
+        </span>
         <nav class="mainmenu mobile-menu">
             <ul>
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="./index.html#rooms">Rooms</a></li>
-                <li class="active"><a href="./gallery.html">Gallery</a></li>
-                <li><a href="./index.html#about-us">About Us</a></li>
+                <li><a href="./gallery.html">Gallery</a></li>
                 <li><a href="./contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -61,7 +59,7 @@
         <div class="top-social">
             <a href="#"><i class="fa fa-facebook"></i></a>
             <a href="#"><i class="fa fa-twitter"></i></a>
-            <!-- <a href="#"><i class="fa fa-tripadvisor"></i></a> -->
+            <a href="#"><i class="fa fa-tripadvisor"></i></a>
             <a href="#"><i class="fa fa-instagram"></i></a>
         </div>
         <ul class="top-widget">
@@ -72,27 +70,32 @@
     <!-- Offcanvas Menu Section End -->
 
     <!-- Header Section Begin -->
-    <header class="header-section header-normal">
+    <header class="header-section">
         <div class="top-nav fixed-top bg-danger">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
                         <ul class="tn-left">
                             <li>
-                                <a href="tel:+911596255530">
+                                <a href="tel:+911596255530"
+                                    style="text-decoration: none; color: rgb(255, 255, 255) !important;">
                                     <i class="fa fa-phone"></i> (+91) 1596 255 530
                                 </a>
                             </li>
                             <li>
-                                <a href="mailto:vfast@pilani.bits-pilani.ac.in">
+                                <a href="mailto:vfast@pilani.bits-pilani.ac.in"
+                                    style="text-decoration: none; color: rgb(255, 255, 255) !important;">
                                     <i class="fa fa-envelope"></i> vfast@pilani.bits-pilani.ac.in
                                 </a>
                             </li>
                         </ul>
                     </div>
-                    <div class="col-lg-6 pe-0">
+                    <div class="col-lg-6">
                         <div class="tn-right">
                             <div class="top-social">
+                                <!-- <a href="#"><i class="fa fa-facebook"></i></a> -->
+                                <!-- <a href="#"><i class="fa fa-twitter"></i></a> -->
+                                <!-- <a href="#"><i class="fa fa-tripadvisor"></i></a> -->
                                 <a href="http://bits-pilani.ac.in"><i class="fa fa-globe fa-lg"></i></a>
                             </div>
                             <a href="booking.html" class="bk-btn">Reserve Now</a>
@@ -107,7 +110,7 @@
                     <div class="col-lg-2">
                         <div class="logo">
                             <a href="./index.html">
-                                <img src="src/img/logo.png" alt="">
+                                <img src="src/img/logo.png" alt="" height="35">
                             </a>
                         </div>
                     </div>
@@ -117,15 +120,15 @@
                                 <ul>
                                     <li><a href="./index.html">Home</a></li>
                                     <li><a href="./index.html#rooms">Rooms</a></li>
-                                    <li class="active"><a href="./gallery.html">Gallery</a></li>
+                                    <li><a href="./gallery.html">Gallery</a></li>
                                     <li><a href="./index.html#about-us">About Us</a></li>
-                                    <li><a href="./contact.html">Contact</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
                                 </ul>
                             </nav>
                             <span class="login-btn">
-                                <a href="./login.html">
-                                    <i class="fa fa-user-circle fa-lg" aria-hidden="true"></i>
-                                    Login
+                                <a href="#">
+                                    <i class="fa fa-user-circle-o fa-lg" aria-hidden="true"></i>
+                                    Shreyas A
                                 </a>
                             </span>
                         </div>
@@ -136,97 +139,51 @@
     </header>
     <!-- Header End -->
 
-    <!-- Breadcrumb Section Begin -->
-    <div class="breadcrumb-section">
+    <!-- Contact Section Begin -->
+    <section class="contact-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="breadcrumb-text">
-                        <h2>Photo Gallery</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Breadcrumb Section End -->
-
-    <!-- Gallery Page Section Begin -->
-    <section class="aboutus-page-section spad">
-        <div class="container">
-            <div class="about-page-text">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="ap-title">
-                            <h2>Welcome to VFAST</h2>
-                        </div>
-                    </div>
-                    <div class="col-md-10 col-lg-5">
-                        <form action="#" class="contact-form" id="searchForm">
-                            <input type="text" class="search" id="searchBar" placeholder="Search the gallery">
-                        </form>
-                    </div>
-                    <div class="col-md-2 col-lg-1">
-                        <div class="contact-form">
-                            <button type="button" class="text-center">
-                                <i class="fa fa-search fa-lg m-0 p-0" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="about-page-services" id="roomsCards">
-                <div class="row">
-                    <div class="col-md-4">
-                        <a href="./gallery.html#Lawn">
-                            <div class="ap-service-item set-bg" data-setbg="src/img/hero/main1.webp">
-                                <div class="api-text">
-                                    <h3>Outside VFAST</h3>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="./gallery.html#Delux Room">
-                            <div class="ap-service-item set-bg" data-setbg="src/img/VFAST_photos/DLX%20Room/IMG20240720095447.webp">
-                                <div class="api-text">
-                                    <h3>VFAST Rooms</h3>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="./gallery.html#Conference Hall">
-                            <div class="ap-service-item set-bg" data-setbg="src/img/VFAST_photos/Conference%20Hall/IMG20240705114619.webp">
-                                <div class="api-text">
-                                    <h3>Conference Rooms</h3>
-                                </div>
-                            </div>
-                        </a>
+                    <div class="contact-text">
+                        <h2>My Reservation</h2>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="c-o">Room Type:</td>
+                                    <td>Executive</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-o">Number of Rooms:</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-o">From:</td>
+                                    <td>23 November 2024</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-o">To:</td>
+                                    <td>24 November 2024</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-o">Email:</td>
+                                    <td>h20240192@pilani.bits-pilani.ac.in</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-o">Phone:</td>
+                                    <td>+91 9182736450</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-o">Status:</td>
+                                    <td><b class="text-center text-success border border-success p-2 rounded-3">CONFIRMED</b></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Gallery Page Section End -->
-
-    <!-- Gallery Section Begin -->
-    <section class="gallery-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <span>Our Gallery</span>
-                        <h2>Discover Our Work</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="container" id="galleryContainer"></div>
-                <!-- Dynamic gallery sections will be injected here -->
-            </div>
-        </div>
-    </section>
-    <!-- Gallery Section End -->
+    <!-- Contact Section End -->
 
     <!-- Footer Section Begin -->
     <footer class="footer-section">
@@ -240,6 +197,7 @@
                                     <img src="src/img/logo.png" alt="">
                                 </a>
                             </div>
+                            <p>We inspire and reach millions of travelers<br /> across 90 local websites</p>
                             <div class="fa-social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
@@ -250,7 +208,7 @@
                     </div>
                     <div class="col-lg-5 offset-lg-1">
                         <div class="ft-contact">
-                            <h6 style="color:#2B296D">Contact Us</h6>
+                            <h6>Contact Us</h6>
                             <ul>
                                 <li>(+91) 1596 255 530</li>
                                 <li>vfast@pilani.bits-pilani.ac.in</li>
@@ -290,17 +248,32 @@
     </footer>
     <!-- Footer Section End -->
 
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
     <!-- Js Plugins -->
     <script src="src/js/jquery-3.3.1.min.js"></script>
-    <script src="src/js/bootstrap.min.js"></script>
+    <!-- <script src="src/js/bootstrap.min.js"></script> -->
     <script src="src/js/jquery.magnific-popup.min.js"></script>
     <script src="src/js/jquery.nice-select.min.js"></script>
     <script src="src/js/jquery-ui.min.js"></script>
     <script src="src/js/jquery.slicknav.js"></script>
+
     <script src="src/js/owl.carousel.min.js"></script>
+
     <script src="src/js/main.js"></script>
 
-    <script src="src/js/vfast-script.js" defer></script>
+    <script defer
+        src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
+        integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
+        data-cf-beacon='{"rayId":"8d5acbc7bea833a8","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2024.10.1","token":"cd0b4b3a733644fc843ef0b185f98241"}'
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
