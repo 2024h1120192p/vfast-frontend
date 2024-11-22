@@ -27,11 +27,11 @@
     <link rel="stylesheet" href="src/css/vfast-style.css" type="text/css">
 </head>
 
-<body>
+<body data-bs-spy="scroll" data-bs-target="#roomsCards" data-bs-offset="20">
     <!-- Page Preloder -->
-    <!-- <div id="preloder">
+    <div id="preloder">
         <div class="loader"></div>
-    </div> -->
+    </div>
 
     <!-- Offcanvas Menu Section Begin -->
     <div class="offcanvas-menu-overlay"></div>
@@ -51,8 +51,9 @@
         <nav class="mainmenu mobile-menu">
             <ul>
                 <li><a href="./index.html">Home</a></li>
-                <li><a href="./rooms.html">Rooms</a></li>
+                <li><a href="./index.html#rooms">Rooms</a></li>
                 <li class="active"><a href="./gallery.html">Gallery</a></li>
+                <li><a href="./index.html#about-us">About Us</a></li>
                 <li><a href="./contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -60,7 +61,7 @@
         <div class="top-social">
             <a href="#"><i class="fa fa-facebook"></i></a>
             <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-tripadvisor"></i></a>
+            <!-- <a href="#"><i class="fa fa-tripadvisor"></i></a> -->
             <a href="#"><i class="fa fa-instagram"></i></a>
         </div>
         <ul class="top-widget">
@@ -72,26 +73,35 @@
 
     <!-- Header Section Begin -->
     <header class="header-section header-normal">
-        <div class="top-nav">
+        <div class="top-nav fixed-top bg-danger">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
                         <ul class="tn-left">
-                            <li><i class="fa fa-phone"></i> (+91) 1596 255 530</li>
-                            <li><i class="fa fa-envelope"></i> vfast@pilani.bits-pilani.ac.in</li>
+                            <li>
+                                <a href="tel:+911596255530">
+                                    <i class="fa fa-phone"></i> (+91) 1596 255 530
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:vfast@pilani.bits-pilani.ac.in">
+                                    <i class="fa fa-envelope"></i> vfast@pilani.bits-pilani.ac.in
+                                </a>
+                            </li>
                         </ul>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 pe-0">
                         <div class="tn-right">
                             <div class="top-social">
+                                <a href="http://bits-pilani.ac.in"><i class="fa fa-globe fa-lg"></i></a>
                             </div>
-                            <a href="#" class="bk-btn">Reserve Now</a>
+                            <a href="booking.html" class="bk-btn">Reserve Now</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="menu-item">
+        <div class="menu-item mt-lg-5">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-2">
@@ -132,11 +142,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb-text">
-                        <h2>Gallery</h2>
-                        <div class="bt-option">
-                            <a href="./index.html">Home</a>
-                            <span>Gallery</span>
-                        </div>
+                        <h2>Photo Gallery</h2>
                     </div>
                 </div>
             </div>
@@ -154,12 +160,12 @@
                             <h2>Welcome to VFAST</h2>
                         </div>
                     </div>
-                    <div class="col-5">
+                    <div class="col-md-10 col-lg-5">
                         <form action="#" class="contact-form" id="searchForm">
-                            <input type="text" class="search col-2" id="searchBar" placeholder="Search the gallery">
+                            <input type="text" class="search" id="searchBar" placeholder="Search the gallery">
                         </form>
                     </div>
-                    <div class="col-1">
+                    <div class="col-md-2 col-lg-1">
                         <div class="contact-form">
                             <button type="button" class="text-center">
                                 <i class="fa fa-search fa-lg m-0 p-0" aria-hidden="true"></i>
@@ -168,28 +174,34 @@
                     </div>
                 </div>
             </div>
-            <div class="about-page-services" id="roomsCard">
+            <div class="about-page-services" id="roomsCards">
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="ap-service-item set-bg" data-setbg="src/img/hero/main1.jpg">
-                            <div class="api-text">
-                                <h3>Outside VFAST</h3>
+                        <a href="./gallery.html#Lawn">
+                            <div class="ap-service-item set-bg" data-setbg="src/img/hero/main1.webp">
+                                <div class="api-text">
+                                    <h3>Outside VFAST</h3>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="col-md-4">
-                        <div class="ap-service-item set-bg" data-setbg="src/img/about/about-p2.jpg">
-                            <div class="api-text">
-                                <h3>VFAST Rooms</h3>
+                        <a href="./gallery.html#Delux Room">
+                            <div class="ap-service-item set-bg" data-setbg="src/img/VFAST_photos/DLX%20Room/IMG20240720095447.webp">
+                                <div class="api-text">
+                                    <h3>VFAST Rooms</h3>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="col-md-4">
-                        <div class="ap-service-item set-bg" data-setbg="src/img/about/about-p3.jpg">
-                            <div class="api-text">
-                                <h3>Conference Rooms</h3>
+                        <a href="./gallery.html#Conference Hall">
+                            <div class="ap-service-item set-bg" data-setbg="src/img/VFAST_photos/Conference%20Hall/IMG20240705114619.webp">
+                                <div class="api-text">
+                                    <h3>Conference Rooms</h3>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
