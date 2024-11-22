@@ -73,7 +73,7 @@ label {
     margin-bottom: 10px;
 }
 
-#roomsCard .ap-service-item .api-text h3{
+#roomsCards .ap-service-item .api-text h3{
     background-color: #0005;
     backdrop-filter: blur(4px);
     width: fit-content;
@@ -84,4 +84,19 @@ label {
 
 tr .c-o {
     width: 180px !important;
+}
+
+@media (min-width:992px){
+    .menu-item .logo{
+        height: 35px;
+    }
+    
+    .menu-item .logo img{
+        margin-top: -17px;
+        /* height: 35px; */
+    }
+
+    .menu-item.mt-lg-5{
+        margin-top: 52px !important;
+    }
 }
