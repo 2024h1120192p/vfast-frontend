@@ -1,0 +1,813 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "VFAST Hotel Booking System",
+        "version": "0.1.0"
+    },
+    "paths": {
+        "/api/v1/admin/login": {
+            "post": {
+                "tags": [
+                    "Admin Auth"
+                ],
+                "summary": "Login",
+                "operationId": "login_api_v1_admin_login_post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/LoginRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/admin/verify-otp": {
+            "post": {
+                "tags": [
+                    "Admin Auth"
+                ],
+                "summary": "Verify Otp",
+                "operationId": "verify_otp_api_v1_admin_verify_otp_post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/VerifyOtpRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "OAuth2PasswordBearer": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/admin/gauth": {
+            "post": {
+                "tags": [
+                    "Admin Auth"
+                ],
+                "summary": "G Auth",
+                "operationId": "g_auth_api_v1_admin_gauth_post",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Token"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/user/login": {
+            "post": {
+                "tags": [
+                    "User Auth"
+                ],
+                "summary": "Login",
+                "operationId": "login_api_v1_user_login_post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/LoginRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/user/verify-otp": {
+            "post": {
+                "tags": [
+                    "User Auth"
+                ],
+                "summary": "Verify Otp",
+                "operationId": "verify_otp_api_v1_user_verify_otp_post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/VerifyOtpRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "OAuth2PasswordBearer": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/user/gauth": {
+            "post": {
+                "tags": [
+                    "User Auth"
+                ],
+                "summary": "G Auth",
+                "operationId": "g_auth_api_v1_user_gauth_post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/GAuthRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/user/google-sign-in": {
+            "get": {
+                "tags": [
+                    "User Auth"
+                ],
+                "summary": "Google Sign In",
+                "operationId": "google_sign_in_api_v1_user_google_sign_in_get",
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/booking/availability": {
+            "get": {
+                "tags": [
+                    "Bookings"
+                ],
+                "summary": "Availability Calendar",
+                "operationId": "availability_calendar_api_v1_booking_availability_get",
+                "security": [
+                    {
+                        "OAuth2PasswordBearer": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Start"
+                        }
+                    },
+                    {
+                        "name": "end",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "End"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/booking/booking-request": {
+            "post": {
+                "tags": [
+                    "Bookings"
+                ],
+                "summary": "Request Booking",
+                "operationId": "request_booking_api_v1_booking_booking_request_post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BookingRequestRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "OAuth2PasswordBearer": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/booking/confirm-booking": {
+            "post": {
+                "tags": [
+                    "Bookings"
+                ],
+                "summary": "Booking Confirmation",
+                "operationId": "booking_confirmation_api_v1_booking_confirm_booking_post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ConfirmBookingRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "OAuth2PasswordBearer": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/booking/booking-dashboard": {
+            "get": {
+                "tags": [
+                    "Bookings"
+                ],
+                "summary": "Booking Dashboard",
+                "operationId": "booking_dashboard_api_v1_booking_booking_dashboard_get",
+                "security": [
+                    {
+                        "OAuth2PasswordBearer": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "req_date",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "title": "Req Date"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/booking/booking-statistics": {
+            "get": {
+                "tags": [
+                    "Bookings"
+                ],
+                "summary": "Booking Stats",
+                "operationId": "booking_stats_api_v1_booking_booking_statistics_get",
+                "security": [
+                    {
+                        "OAuth2PasswordBearer": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "req_date",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "title": "Req Date"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/booking/booking-requests": {
+            "get": {
+                "tags": [
+                    "Bookings"
+                ],
+                "summary": "Booking Requests",
+                "operationId": "booking_requests_api_v1_booking_booking_requests_get",
+                "security": [
+                    {
+                        "OAuth2PasswordBearer": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "req_date",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "title": "Req Date"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/booking/user-bookings": {
+            "get": {
+                "tags": [
+                    "Bookings"
+                ],
+                "summary": "User Bookings",
+                "operationId": "user_bookings_api_v1_booking_user_bookings_get",
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "OAuth2PasswordBearer": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "BookingRequestRequest": {
+                "properties": {
+                    "first_name": {
+                        "type": "string",
+                        "title": "First Name"
+                    },
+                    "last_name": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Last Name",
+                        "default": ""
+                    },
+                    "gender": {
+                        "type": "string",
+                        "enum": [
+                            "male",
+                            "female",
+                            "others"
+                        ],
+                        "title": "Gender"
+                    },
+                    "purpose_of_visit": {
+                        "type": "string",
+                        "title": "Purpose Of Visit"
+                    },
+                    "relation_to_user": {
+                        "type": "string",
+                        "title": "Relation To User"
+                    },
+                    "remarks": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Remarks",
+                        "default": ""
+                    },
+                    "email": {
+                        "type": "string",
+                        "title": "Email"
+                    },
+                    "phone_number": {
+                        "type": "string",
+                        "title": "Phone Number"
+                    },
+                    "check_in": {
+                        "type": "string",
+                        "title": "Check In"
+                    },
+                    "check_out": {
+                        "type": "string",
+                        "title": "Check Out"
+                    },
+                    "room_type": {
+                        "type": "string",
+                        "enum": [
+                            "Standard",
+                            "Deluxe",
+                            "Suite",
+                            "Royal Suite",
+                            "Dormitory"
+                        ],
+                        "title": "Room Type"
+                    },
+                    "pax": {
+                        "type": "integer",
+                        "title": "Pax"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "first_name",
+                    "gender",
+                    "purpose_of_visit",
+                    "relation_to_user",
+                    "email",
+                    "phone_number",
+                    "check_in",
+                    "check_out",
+                    "room_type",
+                    "pax"
+                ],
+                "title": "BookingRequestRequest"
+            },
+            "ConfirmBookingRequest": {
+                "properties": {
+                    "status": {
+                        "type": "string",
+                        "title": "Status"
+                    },
+                    "reason": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Reason"
+                    },
+                    "booking_id": {
+                        "type": "string",
+                        "title": "Booking Id"
+                    },
+                    "status_reason": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Status Reason"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "status",
+                    "booking_id"
+                ],
+                "title": "ConfirmBookingRequest"
+            },
+            "GAuthRequest": {
+                "properties": {
+                    "token": {
+                        "type": "string",
+                        "title": "Token"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "token"
+                ],
+                "title": "GAuthRequest"
+            },
+            "HTTPValidationError": {
+                "properties": {
+                    "detail": {
+                        "items": {
+                            "$ref": "#/components/schemas/ValidationError"
+                        },
+                        "type": "array",
+                        "title": "Detail"
+                    }
+                },
+                "type": "object",
+                "title": "HTTPValidationError"
+            },
+            "LoginRequest": {
+                "properties": {
+                    "username": {
+                        "type": "string",
+                        "title": "Username"
+                    },
+                    "password": {
+                        "type": "string",
+                        "title": "Password"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "username",
+                    "password"
+                ],
+                "title": "LoginRequest"
+            },
+            "ValidationError": {
+                "properties": {
+                    "loc": {
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "integer"
+                                }
+                            ]
+                        },
+                        "type": "array",
+                        "title": "Location"
+                    },
+                    "msg": {
+                        "type": "string",
+                        "title": "Message"
+                    },
+                    "type": {
+                        "type": "string",
+                        "title": "Error Type"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "loc",
+                    "msg",
+                    "type"
+                ],
+                "title": "ValidationError"
+            },
+            "VerifyOtpRequest": {
+                "properties": {
+                    "otp": {
+                        "type": "string",
+                        "title": "Otp"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "otp"
+                ],
+                "title": "VerifyOtpRequest"
+            }
+        },
+        "securitySchemes": {
+            "OAuth2PasswordBearer": {
+                "type": "oauth2",
+                "flows": {
+                    "password": {
+                        "scopes": {},
+                        "tokenUrl": "api/v1/user/login"
+                    }
+                }
+            }
+        }
+    }
+}

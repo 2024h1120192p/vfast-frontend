@@ -41,12 +41,6 @@
         <div class="canvas-close">
             <i class="icon_close"></i>
         </div>
-        <div class="search-icon search-switch">
-            <i class="icon_search"></i>
-        </div>
-        <!-- <div class="header-configure-area">
-            <a href="#" class="bk-btn">Reserve Now</a>
-        </div> -->
         <nav class="mainmenu mobile-menu">
             <ul>
                 <li><a href="./index.html">Home</a></li>
@@ -60,7 +54,6 @@
         <div class="top-social">
             <a href="#"><i class="fa fa-facebook"></i></a>
             <a href="#"><i class="fa fa-twitter"></i></a>
-            <!-- <a href="#"><i class="fa fa-tripadvisor"></i></a> -->
             <a href="#"><i class="fa fa-instagram"></i></a>
         </div>
         <ul class="top-widget">
@@ -93,8 +86,6 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="tn-right">
-                            <div class="top-social">
-                            </div>
                             <a href="http://bits-pilani.ac.in"><i class="fa fa-globe fa-lg"></i></a>
                         </div>
                     </div>
@@ -145,36 +136,44 @@
                         <h2 class="text-center">Reserve Room</h2>
                     </div>
                 </div>
-                <div class="col-lg-12  booking-form">
-                    <form action="#" class="contact-form">
+                <div class="col-lg-12 booking-form">
+                    <form action="#" class="contact-form" id="bookingForm">
                         <div class="row">
-                            <div class="col-lg-6">
-                                <label for="">First Name</label>
-                                <input type="text" placeholder="First Name">
-                            </div>
-                            <div class="col-lg-6">
-                                <label for="">Last Name</label>
-                                <input type="text" placeholder="Last Name">
+                            <div class="col-lg-4">
+                                <label for="firstName">First Name</label>
+                                <input type="text" placeholder="First Name" id="firstName">
                             </div>
                             <div class="col-lg-4">
-                                <label for="">Count of Guests</label>
-                                <input type="text" placeholder="Count of Guests">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" placeholder="Last Name" id="lastName">
                             </div>
-                            <div class="col-lg-8">
-                                <label for="">Phone</label>
-                                <input type="text" placeholder="Phone">
+                            <div class="col-lg-4">
+                                <label for="age">Age</label>
+                                <input type="text" placeholder="Age" id="age">
+                            </div>
+                            <div class="col-lg-5">
+                                <label for="email">Email</label>
+                                <input type="email" placeholder="Email" id="email">
+                            </div>
+                            <div class="col-lg-5">
+                                <label for="phone">Phone</label>
+                                <input type="text" placeholder="Phone" id="phone">
+                            </div>
+                            <div class="col-lg-2">
+                                <label for="guestCount">Count of Guests</label>
+                                <input type="text" placeholder="Count of Guests" id="guestCount">
                             </div>
                             <div class="col-lg-7 select-option">
-                                <label for="">Room Type</label>
-                                <select type="text" placeholder="Room Type">
+                                <label for="roomType">Room Type</label>
+                                <select id="roomType">
                                     <option value="S">Standard</option>
-                                    <option value="D">Delux</option>
+                                    <option value="D">Deluxe</option>
                                     <option value="E">Executive</option>
                                 </select>
                             </div>
                             <div class="col-lg-5 select-option">
-                                <label for="">Rooms Count</label>
-                                <select type="text" placeholder="Room Type">
+                                <label for="roomCount">Rooms Count</label>
+                                <select id="roomCount">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -183,17 +182,26 @@
                                 </select>
                             </div>
                             <div class="check-date col-lg-6">
-                                <label for="">Check In</label>
-                                <input type="text" class="date-input" id="date-in" placeholder="From">
+                                <label for="startDate">Check In</label>
+                                <input type="text" class="date-input" id="startDate" placeholder="From">
                             </div>
                             <div class="check-date col-lg-6">
-                                <label for="">Check Out</label>
-                                <input type="text" class="date-input" id="date-out" placeholder="To">
+                                <label for="endDate">Check Out</label>
+                                <input type="text" class="date-input" id="endDate" placeholder="To">
                             </div>
                             <div class="col-lg-12">
-                                <label for="">Purpose of Visit</label>
-                                <textarea
-                                    placeholder="Please enter if you need anything specific, we will try to arrange it."></textarea>
+                                <label for="purpose">Purpose of Visit</label>
+                                <textarea id="purpose" placeholder="For security and documentation purposes, please confirm the primary purpose of your visit."></textarea>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="agreeTerms" style="width: 10px; height: 30px;">
+                                    <label class="form-check-label pt-2" for="agreeTerms" style="size: 3rem;">
+                                        &nbsp; I agree to the Terms and Conditions.
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
                                 <button type="submit">Request Now</button>
                             </div>
                         </div>
@@ -289,10 +297,15 @@
 
     <script src="src/js/main.js"></script>
 
+    <!-- Booking Scripts -->
+    <script type="module" src="src/js/vfast-apiClient.js"></script>
+    <script type="module" src="src/js/vfast-bookings.js"></script>
+    <script type="module" src="src/js/booking-form-handler.js"></script>
+
     <script defer
         src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
         integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
-        data-cf-beacon='{"rayId":"8d5acbc7bea833a8","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2024.10.1","token":"cd0b4b3a733644fc843ef0b185f98241"}'
+        data-cf-beacon='{"rayId":"8d5acbc7bea833a8","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2024.10.1"}'
         crossorigin="anonymous"></script>
 </body>
 

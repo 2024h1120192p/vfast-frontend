@@ -54,9 +54,6 @@
                     <div class="col-lg-6">
                         <div class="tn-right">
                             <div class="top-social">
-                                <!-- <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-tripadvisor"></i></a> -->
                             </div>
                             <a href="http://bits-pilani.ac.in">
                                 <i class="fa fa-globe fa-lg"></i>
@@ -78,17 +75,29 @@
                 <div class="col-lg-4 offset-lg-1">
                     <div class="contact-text h-100 d-lg-grid" style="place-items: center;">
                         <h2 class="align-middle text-center">Login</h2>
-                        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua.</p> -->
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-5">
-                    <form action="admin.html" class="contact-form">
+                    <form action="admin.html" class="contact-form" id="loginForm">
                         <div class="row">
-                            <div class="col-lg-12">
-                                <input type="text" placeholder="Email ID">
-                                <input type="password" placeholder="Password">
-                                <button class="w-100" type="submit" style="background-color:#F0A414">Login with BITS Account</button>
+                            <div class="col-md-12">
+                                <input type="text" placeholder="Email ID" name="email">
+                            </div>
+                            <div class="col-md-12">
+                                <input type="password" placeholder="Password" name="password">
+                            </div>
+                            <div class="col-lg-6">
+                                <button class="w-100 my-2 border rounded-2" type="submit" style="background-color:#F0A414">Login</button>
+                            </div>
+                            <div class="col-lg-6 align-content-center">
+                                <div id="g_id_onload"
+                                    data-client_id="855258357265-pl8s44g0hvdpmhcju8l0p2rapu8c536n.apps.googleusercontent.com"
+                                    data-callback="handleCredentialResponse"
+                                    data-login_uri="https://vfast.free.beeceptor.com">
+                                </div>
+                                <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline"
+                                    data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left">
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -131,16 +140,6 @@
                             </ul>
                         </div>
                     </div>
-                    <!-- <div class="col-lg-3 offset-lg-1">
-                            <div class="ft-newslatter">
-                                <h6>New latest</h6>
-                                <p>Get the latest updates and offers.</p>
-                                <form action="#" class="fn-form">
-                                    <input type="text" placeholder="Email">
-                                    <button type="submit"><i class="fa fa-send"></i></button>
-                                </form>
-                            </div>
-                        </div> -->
                 </div>
             </div>
         </div>
@@ -192,12 +191,16 @@
     <script src="src/js/owl.carousel.min.js"></script>
 
     <script src="src/js/main.js"></script>
-    
+    <script src="src/js/script.js"></script>
+    <script src="src/js/vfast-login-script.js"></script>
+
     <script defer
         src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
         integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
         data-cf-beacon='{"rayId":"8d5acbc7bea833a8","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2024.10.1","token":"cd0b4b3a733644fc843ef0b185f98241"}'
         crossorigin="anonymous"></script>
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </body>
 
 </html>
