@@ -1,7 +1,5 @@
 'use strict';
 
-import { requestBooking } from './vfast-bookings.js';
-
 (function ($) {
 
     /*------------------
@@ -99,41 +97,41 @@ import { requestBooking } from './vfast-bookings.js';
     --------------------*/
     $("select").niceSelect();
 
-    // booking-form-handler.js
-    (function ($) {
-        $(document).ready(function () {
-            $("#bookingForm").on('submit', function (e) {
-                e.preventDefault();
-                if (!$('#agreeTerms').is(':checked')) {
-                    alert("Please check the box to agree with the Terms and Conditions.");
-                } else {
-                    var data = {
-                        firstName: $("#firstName").val(),
-                        lastName: $("#lastName").val(),
-                        email: $("#email").val(),
-                        age: $("#age").val(),
-                        guestCount: $("#guestCount").val(),
-                        phone: $("#phone").val(),
-                        checkIn: $("#startDate").val(),
-                        checkOut: $("#endDate").val(),
-                        roomType: $("#roomType").val(),
-                        roomCount: $("#roomCount").val(),
-                        purpose: $("#purpose").val()
-                    };
+    $("#bookingForm").on('submit', function (e) {
+        e.preventDefault();
+        if (!$('#agreeTerms').is(':checked')) {
+            alert("Please check the box to agree with the Terms and Conditions.");
+        } else {
+            var data = {
+                firstName: $("#firstName").val(),
+                lastName: $("#lastName").val(),
+                email: $("#email").val(),
+                age: $("#age").val(),
+                guestCount: $("#guestCount").val(),
+                phone: $("#phone").val(),
+                checkIn: $("#startDate").val(),
+                checkOut: $("#endDate").val(),
+                roomType: $("#roomType").val(),
+                roomCount: $("#roomCount").val(),
+                purpose: $("#purpose").val()
+            };
 
-                    requestBooking(data)
-                        .then(response => {
-                            alert("Your booking request has been submitted successfully.");
-                            e.target.reset();
-                        })
-                        .catch(error => {
-                            console.error("Error:", error);
-                            alert("There was an error submitting your booking request.");
-                        });
+            $.ajax({
+                type: "POST",
+                url: "https://http://172.17.48.215:8000/api/v1/booking/booking-request",
+                data: JSON.stringify(data),
+                contentType: "application/json",
+                dataType: "json",
+                success: function (response) {
+                    alert("Your booking request has been submitted successfully.");
+                    e.target.reset();
+                },
+                error: function (xhr, status, error) {
+                    console.error("Error:", error);
+                    alert("There was an error submitting your booking request.");
                 }
             });
-        });
-    })(jQuery);
-
+        }
+    });
 
 })(jQuery);
