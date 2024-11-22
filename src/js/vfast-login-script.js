@@ -12,7 +12,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: 'POST',
-            url: 'https://your-backend-url.com/api/v1/user/login',
+            url: 'http://172.17.48.215:8000/api/v1/user/login',
             data: JSON.stringify(data),
             contentType: 'application/json',
             success: function(response) {
@@ -41,7 +41,7 @@ function handleCredentialResponse(response) {
 
     $.ajax({
         type: 'POST',
-        url: 'https://your-backend-url.com/api/v1/user/gauth',
+        url: 'http://172.17.48.215:8000/api/v1/user/gauth',
         data: JSON.stringify(data),
         contentType: 'application/json',
         success: function(response) {
