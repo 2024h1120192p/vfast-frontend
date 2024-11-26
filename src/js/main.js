@@ -118,7 +118,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "https://http://172.17.48.215:8000/api/v1/booking/booking-request",
+                url: "https://ec2-15-207-110-230.ap-south-1.compute.amazonaws.com/api/v1/booking/booking-request",
                 data: JSON.stringify(data),
                 contentType: "application/json",
                 dataType: "json",

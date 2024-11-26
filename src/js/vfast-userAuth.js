@@ -51,14 +51,3 @@ export async function userGAuth(gAuthData) {
     }
     return response;
 }
-
-/**
- * User Google Sign-In
- * @returns {Promise<object>} The response data.
- */
-export async function googleSignIn() {
-    const response = await apiRequest('/api/v1/user/google-sign-in', {
-        method: 'GET',
-    }, false);
-    return response;
-}

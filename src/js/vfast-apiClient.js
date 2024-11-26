@@ -1,8 +1,6 @@
 // vfast-apiClient.js
 const BASE_URL = 'http://172.17.48.215:8000'; // Replace with your actual base URL
 
-let authToken = null;
-
 /**
  * Set the authentication token.
  * @param {string} token - The OAuth2 token.
