@@ -1,5 +1,4 @@
 // vfast-bookings.js
-import { apiRequest } from './vfast-apiClient.js';
 
 /**
  * Get Availability Calendar
@@ -7,7 +6,7 @@ import { apiRequest } from './vfast-apiClient.js';
  * @param {string} end - The end date (e.g., '2024-12-31').
  * @returns {Promise<object>} The availability data.
  */
-export async function getAvailability(start, end) {
+async function getAvailability(start, end) {
     const params = new URLSearchParams({ start, end });
     const endpoint = `/api/v1/booking/availability?${params.toString()}`;
     const response = await apiRequest(endpoint, {
@@ -21,7 +20,7 @@ export async function getAvailability(start, end) {
  * @param {object} bookingData - The booking request data.
  * @returns {Promise<object>} The response data.
  */
-export async function requestBooking(bookingData) {
+async function requestBooking(bookingData) {
     const response = await apiRequest('/api/v1/booking/booking-request', {
         method: 'POST',
         body: JSON.stringify(bookingData),
@@ -34,7 +33,7 @@ export async function requestBooking(bookingData) {
  * @param {object} confirmData - The booking confirmation data.
  * @returns {Promise<object>} The response data.
  */
-export async function confirmBooking(confirmData) {
+async function confirmBooking(confirmData) {
     const response = await apiRequest('/api/v1/booking/confirm-booking', {
         method: 'POST',
         body: JSON.stringify(confirmData),
@@ -47,7 +46,7 @@ export async function confirmBooking(confirmData) {
  * @param {string} [reqDate] - The requested date (optional).
  * @returns {Promise<object>} The dashboard data.
  */
-export async function getBookingDashboard(reqDate = '') {
+async function getBookingDashboard(reqDate = '') {
     const params = reqDate ? `?req_date=${encodeURIComponent(reqDate)}` : '';
     const endpoint = `/api/v1/booking/booking-dashboard${params}`;
     const response = await apiRequest(endpoint, {
@@ -61,7 +60,7 @@ export async function getBookingDashboard(reqDate = '') {
  * @param {string} [reqDate] - The requested date (optional).
  * @returns {Promise<object>} The statistics data.
  */
-export async function getBookingStatistics(reqDate = '') {
+async function getBookingStatistics(reqDate = '') {
     const params = reqDate ? `?req_date=${encodeURIComponent(reqDate)}` : '';
     const endpoint = `/api/v1/booking/booking-statistics${params}`;
     const response = await apiRequest(endpoint, {
@@ -75,7 +74,7 @@ export async function getBookingStatistics(reqDate = '') {
  * @param {string} [reqDate] - The requested date (optional).
  * @returns {Promise<object>} The booking requests data.
  */
-export async function getBookingRequests(reqDate = '') {
+async function getBookingRequests(reqDate = '') {
     const params = reqDate ? `?req_date=${encodeURIComponent(reqDate)}` : '';
     const endpoint = `/api/v1/booking/booking-requests${params}`;
     const response = await apiRequest(endpoint, {
@@ -88,10 +87,21 @@ export async function getBookingRequests(reqDate = '') {
  * Get User Bookings
  * @returns {Promise<object>} The user's bookings data.
  */
-export async function getUserBookings() {
+async function getUserBookings() {
     const endpoint = '/api/v1/booking/user-bookings';
     const response = await apiRequest(endpoint, {
         method: 'GET',
     }, true);
     return response;
 }
+
+(function ($) {
+    $("#bookingForm").on(
+        'submit', 
+        function (e) {
+            e.preventDefault();
+
+            window.location.href = "./dashboard.html"
+        }
+    );
+})(jQuery);

@@ -1,59 +1,45 @@
 // vfast-login-script.js
+if(getAuthToken()) {
+    // window.location.href = "dashboard.html"
+    setAuthToken(null);
+}
 
 // Function to handle login form submission
-$(document).ready(function() {
-    $('#loginForm').on('submit', function(e) {
-        e.preventDefault();
+$('#loginForm').on('submit', function(e) {
+    e.preventDefault();
 
-        var data = {
+    apiRequest('/user/login', {
+        method: 'POST',
+        body: {
             username: $('#email').val(),
             password: $('#password').val()
-        };
-
-        $.ajax({
-            type: 'POST',
-            url: 'https://ec2-15-207-110-230.ap-south-1.compute.amazonaws.com/api/v1/user/login',
-            data: JSON.stringify(data),
-            contentType: 'application/json',
-            success: function(response) {
-                // Assuming the response contains an auth token
-                // Save the token to localStorage or a cookie
-                localStorage.setItem('authToken', response.token);
-                alert('Login successful');
-                // Redirect to dashboard or another page
-                window.location.href = 'admin.html';
-            },
-            error: function(xhr, status, error) {
-                console.error('Login error:', error);
-                alert('Login failed: ' + xhr.responseJSON.message);
-            }
-        });
+        },
+    }, false)
+    .then(function(response) {
+        setAuthToken(response.token);
+        
+        alert('Login successful');
+        window.location.href = 'admin.html';
+    })
+    .catch(function(error) {
+        console.error('Login error:', error);
+        alert('Login failed: ' + error.message);
     });
 });
 
 // Function to handle Google Sign-In response
 function handleCredentialResponse(response) {
-    console.log("Encoded JWT ID token: " + response.credential);
-    // Send the Google ID token to the backend
-    var data = {
-        token: response.credential
-    };
-
-    $.ajax({
-        type: 'POST',
-        url: 'https://ec2-15-207-110-230.ap-south-1.compute.amazonaws.com/api/v1/user/gauth',
-        data: JSON.stringify(data),
-        contentType: 'application/json',
-        success: function(response) {
-            // Assuming the response contains an auth token
-            localStorage.setItem('authToken', response.token);
-            alert('Google Sign-In successful');
-            // Redirect to dashboard or another page
-            window.location.href = 'dashboard.html';
-        },
-        error: function(xhr, status, error) {
-            console.error('Google Sign-In error:', error);
-            alert('Google Sign-In failed: ' + xhr.responseJSON.message);
-        }
+    apiRequest('/user/gauth', {
+        method: 'POST',
+        body: { token: response.credential },
+    }, false)
+    .then(response => {
+        setAuthToken(response.data.access_token);
+        alert('Google Sign-In successful');
+        window.location.href = 'dashboard.html';
+    })
+    .catch(error => {
+        console.error('Google Sign-In error:', error);
+        alert('Google Sign-In failed: ' + error.message);
     });
 }

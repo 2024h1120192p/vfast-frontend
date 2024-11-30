@@ -97,41 +97,41 @@
     --------------------*/
     $("select").niceSelect();
 
-    $("#bookingForm").on('submit', function (e) {
-        e.preventDefault();
-        if (!$('#agreeTerms').is(':checked')) {
-            alert("Please check the box to agree with the Terms and Conditions.");
-        } else {
-            var data = {
-                firstName: $("#firstName").val(),
-                lastName: $("#lastName").val(),
-                email: $("#email").val(),
-                age: $("#age").val(),
-                guestCount: $("#guestCount").val(),
-                phone: $("#phone").val(),
-                checkIn: $("#startDate").val(),
-                checkOut: $("#endDate").val(),
-                roomType: $("#roomType").val(),
-                roomCount: $("#roomCount").val(),
-                purpose: $("#purpose").val()
-            };
+    // $("#bookingForm").on('submit', function (e) {
+    //     e.preventDefault();
+    //     if (!$('#agreeTerms').is(':checked')) {
+    //         alert("Please check the box to agree with the Terms and Conditions.");
+    //     } else {
+    //         var data = {
+    //             firstName: $("#firstName").val(),
+    //             lastName: $("#lastName").val(),
+    //             email: $("#email").val(),
+    //             age: $("#age").val(),
+    //             guestCount: $("#guestCount").val(),
+    //             phone: $("#phone").val(),
+    //             checkIn: $("#startDate").val(),
+    //             checkOut: $("#endDate").val(),
+    //             roomType: $("#roomType").val(),
+    //             roomCount: $("#roomCount").val(),
+    //             purpose: $("#purpose").val()
+    //         };
 
-            $.ajax({
-                type: "POST",
-                url: "https://ec2-15-207-110-230.ap-south-1.compute.amazonaws.com/api/v1/booking/booking-request",
-                data: JSON.stringify(data),
-                contentType: "application/json",
-                dataType: "json",
-                success: function (response) {
-                    alert("Your booking request has been submitted successfully.");
-                    e.target.reset();
-                },
-                error: function (xhr, status, error) {
-                    console.error("Error:", error);
-                    alert("There was an error submitting your booking request.");
-                }
-            });
-        }
-    });
+    //         $.ajax({
+    //             type: "POST",
+    //             url: "https://ec2-15-207-110-230.ap-south-1.compute.amazonaws.com/api/v1/booking/booking-request",
+    //             data: JSON.stringify(data),
+    //             contentType: "application/json",
+    //             dataType: "json",
+    //             success: function (response) {
+    //                 alert("Your booking request has been submitted successfully.");
+    //                 e.target.reset();
+    //             },
+    //             error: function (xhr, status, error) {
+    //                 console.error("Error:", error);
+    //                 alert("There was an error submitting your booking request.");
+    //             }
+    //         });
+    //     }
+    // });
 
 })(jQuery);
