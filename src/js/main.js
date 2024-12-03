@@ -41,8 +41,8 @@
     });
 
     /*------------------
-		Navigation
-	--------------------*/
+        Navigation
+    --------------------*/
     $(".mobile-menu").slicknav({
         prependTo: '#mobile-menu-wrap',
         allowParentLinks: true
@@ -51,7 +51,7 @@
     /*------------------
         Hero Slider
     --------------------*/
-   $(".hero-slider").owlCarousel({
+    $(".hero-slider").owlCarousel({
         loop: true,
         margin: 0,
         items: 1,
@@ -65,7 +65,7 @@
     });
 
     /*------------------------
-		Testimonial Slider
+        Testimonial Slider
     ----------------------- */
     $(".testimonial-slider").owlCarousel({
         items: 1,
@@ -85,49 +85,53 @@
     });
 
     /*------------------
-		Date Picker
-	--------------------*/
+        Date Picker
+    --------------------*/
     $(".date-input").datepicker({
         minDate: 0,
         dateFormat: 'dd MM, yy'
     });
 
     /*------------------
-		Nice Select
-	--------------------*/
+        Nice Select
+    --------------------*/
     $("select").niceSelect();
 
-    $("#bookingForm").on('reset', function (e) {
-        e.preventDefault();
-        if($("#button[type='reset'")[0].value == false){
-            alert("Please check the box to agree with the Terms and Conditions.");
-        }
-        else{
-            data = {
-                name         : $("#firstName")[0].value + " " + $("#lastName")[0].value,
-                email        : $("#email")[0].value,
-                age          : $("#age")[0].value,
-                checkIn      : $("#startDate")[0].value,
-                checkOut     : $("#endDate")[0].value,
-                roomType     : $("#roomType")[0].value,
-                roomCount    : $("#roomCount")[0].value,
-            }
-        
-            $.ajax({
-                type: "POST",
-                url: "http://vfast.online:8000/book",
-                data: JSON.stringify(data),
-                contentType : "application/json",
-                dataType: "text",
-                success: function (response) {
-                    console.log("response : "+response)
-                    alert("The form was submitted successfully.")
-                }
-            });
-    
-            e.target.reset();
-        }
-    });
+    // $("#bookingForm").on('submit', function (e) {
+    //     e.preventDefault();
+    //     if (!$('#agreeTerms').is(':checked')) {
+    //         alert("Please check the box to agree with the Terms and Conditions.");
+    //     } else {
+    //         var data = {
+    //             firstName: $("#firstName").val(),
+    //             lastName: $("#lastName").val(),
+    //             email: $("#email").val(),
+    //             age: $("#age").val(),
+    //             guestCount: $("#guestCount").val(),
+    //             phone: $("#phone").val(),
+    //             checkIn: $("#startDate").val(),
+    //             checkOut: $("#endDate").val(),
+    //             roomType: $("#roomType").val(),
+    //             roomCount: $("#roomCount").val(),
+    //             purpose: $("#purpose").val()
+    //         };
+
+    //         $.ajax({
+    //             type: "POST",
+    //             url: "https://ec2-15-207-110-230.ap-south-1.compute.amazonaws.com/api/v1/booking/booking-request",
+    //             data: JSON.stringify(data),
+    //             contentType: "application/json",
+    //             dataType: "json",
+    //             success: function (response) {
+    //                 alert("Your booking request has been submitted successfully.");
+    //                 e.target.reset();
+    //             },
+    //             error: function (xhr, status, error) {
+    //                 console.error("Error:", error);
+    //                 alert("There was an error submitting your booking request.");
+    //             }
+    //         });
+    //     }
+    // });
 
 })(jQuery);
-
