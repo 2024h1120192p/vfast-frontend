@@ -97,41 +97,57 @@
     --------------------*/
     $("select").niceSelect();
 
-    // $("#bookingForm").on('submit', function (e) {
-    //     e.preventDefault();
-    //     if (!$('#agreeTerms').is(':checked')) {
-    //         alert("Please check the box to agree with the Terms and Conditions.");
-    //     } else {
-    //         var data = {
-    //             firstName: $("#firstName").val(),
-    //             lastName: $("#lastName").val(),
-    //             email: $("#email").val(),
-    //             age: $("#age").val(),
-    //             guestCount: $("#guestCount").val(),
-    //             phone: $("#phone").val(),
-    //             checkIn: $("#startDate").val(),
-    //             checkOut: $("#endDate").val(),
-    //             roomType: $("#roomType").val(),
-    //             roomCount: $("#roomCount").val(),
-    //             purpose: $("#purpose").val()
-    //         };
+    $("#bookingForm").on('submit', function (e) {
+        e.preventDefault();
 
-    //         $.ajax({
-    //             type: "POST",
-    //             url: "https://ec2-15-207-110-230.ap-south-1.compute.amazonaws.com/api/v1/booking/booking-request",
-    //             data: JSON.stringify(data),
-    //             contentType: "application/json",
-    //             dataType: "json",
-    //             success: function (response) {
-    //                 alert("Your booking request has been submitted successfully.");
-    //                 e.target.reset();
-    //             },
-    //             error: function (xhr, status, error) {
-    //                 console.error("Error:", error);
-    //                 alert("There was an error submitting your booking request.");
-    //             }
-    //         });
-    //     }
-    // });
+        let check_in_date = new Date($("#startDate").val());
+        check_in_date  = `${check_in_date.getFullYear()}-${check_in_date.getMonth()+1}-${check_in_date.getDate()}`
+
+        let check_out_date = new Date($("#endDate").val());
+        check_out_date = `${check_out_date.getFullYear()}-${check_out_date.getMonth()+1}-${check_out_date.getDate()}`
+
+        if (!$('#agreeTerms').is(':checked')) {
+            alert("Please check the box to agree with the Terms and Conditions.");
+            return false;
+        } else {
+            var booking_data = {
+                first_name: $("#firstName").val(),
+                last_name: $("#lastName").val(),
+                gender: $("#gender").val(),
+                purpose_of_visit: $("#purpose").val(),
+                relation_to_user: $("#relation_to_user").val(),
+                remarks: "",
+                email: $("#email").val(),
+                phone_number: $("#phone").val(),
+                check_in: check_in_date,
+                check_out: check_out_date,
+                room_type: $("#roomType").val(),
+                // roomCount: $("#roomCount").val(),
+                pax: $("#guestCount").val()
+            };
+
+            console.log(booking_data);
+
+            $.ajax({
+                type: "POST",
+                url: "https://ec2-15-207-110-230.ap-south-1.compute.amazonaws.com/api/v1/booking/booking-request",
+                headers : {
+                    "Authorization" : `Bearer ${getAuthToken()}`
+                },
+                data: JSON.stringify(booking_data),
+                contentType: "application/json",
+                dataType: "json",
+                success: function (response) {
+                    alert("Your booking request has been submitted successfully.");
+                    e.target.reset();
+                    window.location.href = "./dashboard.html"
+                },
+                error: function (xhr, status, error) {
+                    console.error("Error:", error);
+                    alert("There was an error submitting your booking request.");
+                }
+            });
+        }
+    });
 
 })(jQuery);

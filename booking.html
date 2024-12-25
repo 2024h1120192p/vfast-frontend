@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Dashboard</title>
+    <title>Reserve Room</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -139,63 +139,68 @@
                 <div class="col-lg-12 booking-form">
                     <form action="#" class="contact-form" id="bookingForm">
                         <div class="row">
-                            <div class="col-lg-4">
+                            <div class="col-lg-5">
                                 <label for="firstName">First Name</label>
-                                <input type="text" placeholder="First Name" id="firstName">
+                                <input type="text" placeholder="First Name" id="firstName" required>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-5">
                                 <label for="lastName">Last Name</label>
                                 <input type="text" placeholder="Last Name" id="lastName">
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-2 select-option">
+                                <label for="gender">Gender</label>
+                                <select id="gender" name="gender">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <!-- <div class="col-lg-2">
                                 <label for="age">Age</label>
                                 <input type="text" placeholder="Age" id="age">
+                            </div> -->
+                            <div class="col-lg-4">
+                                <label for="relation_to_user">Relation to User</label>
+                                <input type="relation_to_user" placeholder="Relation to User" id="relation_to_user" required>
                             </div>
-                            <div class="col-lg-5">
+                            <div class="col-lg-4">
                                 <label for="email">Email</label>
-                                <input type="email" placeholder="Email" id="email">
+                                <!-- Filled and disabled ideally -->
+                                <input type="email" placeholder="Email" id="email" required>
                             </div>
-                            <div class="col-lg-5">
+                            <div class="col-lg-4">
                                 <label for="phone">Phone</label>
                                 <input type="text" placeholder="Phone" id="phone">
                             </div>
-                            <div class="col-lg-2">
-                                <label for="guestCount">Count of Guests</label>
-                                <input type="text" placeholder="Count of Guests" id="guestCount">
-                            </div>
                             <div class="col-lg-7 select-option">
-                                <label for="roomType">Room Type</label>
+                                <label for="roomType">Room Type</label required>
                                 <select id="roomType">
-                                    <option value="S">Standard</option>
-                                    <option value="D">Deluxe</option>
-                                    <option value="E">Executive</option>
+                                    <option value="Standard">Standard</option>
+                                    <option value="Delux">Delux</option>
+                                    <option value="Suite">Suite</option>
+                                    <option value="Royal Suite">Royal Suite</option>
+                                    <option value="Dormitory">Dormitory</option>
                                 </select>
                             </div>
-                            <div class="col-lg-5 select-option">
-                                <label for="roomCount">Rooms Count</label>
-                                <select id="roomCount">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
+                            <div class="col-lg-5">
+                                <label for="guestCount">Count of Guests</label>
+                                <input type="text" placeholder="Count of Guests" id="guestCount" value="1" required>
                             </div>
                             <div class="check-date col-lg-6">
                                 <label for="startDate">Check In</label>
-                                <input type="text" class="date-input" id="startDate" placeholder="From">
+                                <input type="text" class="date-input" id="startDate" placeholder="From" required>
                             </div>
                             <div class="check-date col-lg-6">
                                 <label for="endDate">Check Out</label>
-                                <input type="text" class="date-input" id="endDate" placeholder="To">
+                                <input type="text" class="date-input" id="endDate" placeholder="To" required>
                             </div>
                             <div class="col-lg-12">
                                 <label for="purpose">Purpose of Visit</label>
-                                <textarea id="purpose" placeholder="For security and documentation purposes, please confirm the primary purpose of your visit."></textarea>
+                                <textarea id="purpose" placeholder="For security and documentation purposes, please confirm the primary purpose of your visit." required></textarea>
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="agreeTerms" style="width: 10px; height: 30px;">
+                                    <input class="form-check-input" type="checkbox" id="agreeTerms" style="width: 10px; height: 30px;" required>
                                     <label class="form-check-label pt-2" for="agreeTerms" style="size: 3rem;">
                                         &nbsp; I agree to the Terms and Conditions.
                                     </label>
