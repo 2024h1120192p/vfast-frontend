@@ -1,7 +1,7 @@
 // vfast-login-script.js
 if(getAuthToken()) {
-    // window.location.href = "dashboard.html"
-    setAuthToken(null);
+    window.location.href = "./dashboard.html"
+    // setAuthToken(null);
 }
 
 // Function to handle login form submission
@@ -18,7 +18,7 @@ $('#loginForm').on('submit', function(e) {
     .then(function(response) {
         setAuthToken(response.token);
         
-        alert('Login successful');
+        // alert('Login successful');
         window.location.href = 'admin.html';
     })
     .catch(function(error) {
@@ -35,7 +35,7 @@ function handleCredentialResponse(response) {
     }, false)
     .then(response => {
         setAuthToken(response.data.access_token);
-        alert('Google Sign-In successful');
+        // alert('Google Sign-In successful');
         window.location.href = 'dashboard.html';
     })
     .catch(error => {
