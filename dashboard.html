@@ -48,7 +48,7 @@
             </a>
             &nbsp;
             &nbsp;
-            <a href="./login.html">
+            <a href="./dashboard.html">
                 <i class="fa fa-power-off fa-lg text-danger" aria-hidden="true"></i>
             </a>
         </span>
@@ -131,13 +131,13 @@
                                 </ul>
                             </nav>
                             <span class="login-btn">
-                                <a href="#">
+                                <a href="./dashboard.html">
                                     <i class="fa fa-user-circle-o fa-lg" aria-hidden="true"></i>                
                                     Shreyas A
                                 </a>
                                 &nbsp;
                                 &nbsp;
-                                <a href="./login.html">
+                                <a id="logout-btn">
                                     <i class="fa fa-power-off fa-lg text-danger" aria-hidden="true"></i>
                                 </a>
                             </span>
@@ -287,6 +287,22 @@
         integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
         data-cf-beacon='{"rayId":"8d5acbc7bea833a8","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2024.10.1","token":"cd0b4b3a733644fc843ef0b185f98241"}'
         crossorigin="anonymous"></script>
+    
+    <!-- Logout Script added for button -->
+    <script defer>
+        $("#logout-btn").on( 
+            'click', 
+            function(e){
+                if(confirm("Do you really want to log out?")){
+                    clearAuthToken();
+                    //redirect to /
+                    document.location.href = "./";
+                }
+                else
+                    e.preventDefault();
+            }
+        )
+    </script>
 </body>
 
 </html>

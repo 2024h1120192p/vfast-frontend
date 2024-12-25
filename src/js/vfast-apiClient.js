@@ -18,6 +18,13 @@ function getAuthToken() {
 }
 
 /**
+ * Clear the authentication token.
+ */
+function clearAuthToken(token) {
+    localStorage.removeItem('authToken');
+}
+
+/**
  * Make an HTTP request to the API using jQuery's $.ajax.
  *
  * @param {string} endpoint - The API endpoint (e.g., '/api/v1/user/login').
