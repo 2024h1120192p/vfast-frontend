@@ -95,13 +95,13 @@ async function getUserBookings() {
     return response;
 }
 
-(function ($) {
-    $("#bookingForm").on(
-        'submit', 
-        function (e) {
-            e.preventDefault();
+// (function ($) {
+//     $("#bookingForm").on(
+//         'submit', 
+//         function (e) {
+//             e.preventDefault();
 
-            window.location.href = "./dashboard.html"
-        }
-    );
-})(jQuery);
+//             window.location.href = "./dashboard.html"
+//         }
+//     );
+// })(jQuery);
