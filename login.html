@@ -178,25 +178,16 @@
     <!-- Js Plugins -->
     <script src="src/js/jquery-3.3.1.min.js"></script>
     <script src="src/js/jquery.magnific-popup.min.js"></script>
-    <script src="src/js/jquery.nice-select.min.js"></script>
-    <script src="src/js/jquery-ui.min.js"></script>
     <script src="src/js/jquery.slicknav.js"></script>
-
-    <script src="src/js/owl.carousel.min.js"></script>
 
     <script src="src/js/main.js"></script>
     <script src="src/js/api-client.js"></script>
     <script src="src/js/google-login.js" defer></script>
 
     <script>
+        // Redirect to dashboard if user is already logged in
         getAuthToken() && window.location.replace("./dashboard.html");
     </script>
-
-    <script defer
-        src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
-        integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
-        data-cf-beacon='{"rayId":"8d5acbc7bea833a8","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2024.10.1","token":"cd0b4b3a733644fc843ef0b185f98241"}'
-        crossorigin="anonymous"></script>
 
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 </body>

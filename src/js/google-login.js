@@ -9,7 +9,7 @@ function handleCredentialResponse(response) {
         // console.log(response.data.access_token);
         setAuthToken(response.data.access_token);
         // console.log('Google Sign-In successful');
-        // window.location.reload();
+        window.location.reload();
     })
     .catch(error => {
         console.error('Google Sign-In error:', error);
