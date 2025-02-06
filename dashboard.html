@@ -280,6 +280,10 @@
     
     <!-- Logout Script added for button -->
     <script defer>
+        // Redirect to login if user is not logged in
+        (!getAuthToken()) && window.location.replace("./login.html");
+
+        // Logout button click handle
         $("#logout-btn").on( 
             'click', 
             function(e){
