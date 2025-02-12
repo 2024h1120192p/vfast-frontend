@@ -90,12 +90,16 @@ function apiRequest(endpoint, options = {}, requiresAuth = false) {
             let errorMessage = `Error ${jqXHR.status}: ${jqXHR.statusText}`;
             try {
                 const errorData = JSON.parse(jqXHR.responseText);
-                if (errorData.detail) {
-                    errorMessage = JSON.stringify(errorData.detail);
+                if (errorData.data) {
+                    errorMessage += " from server : " + JSON.stringify(errorData.data);
+                }
+                if (errorData.message) {
+                    errorMessage += " from server : " + JSON.stringify(errorData.message);
                 }
             } catch (e) {
                 // If response is not JSON or parsing fails, retain the default error message
-                console.log(e)
+                console.log("api-client.js:108", e);
+                console.log(jqXHR.responseText);
             }
             // Reject the promise with an Error object
             return Promise.reject(new Error(errorMessage));
