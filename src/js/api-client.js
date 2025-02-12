@@ -2,6 +2,11 @@
 // const BASE_URL = 'https://ec2-15-207-110-230.ap-south-1.compute.amazonaws.com/api/v1'; // Replace with your actual base URL
 const BASE_URL = 'https://vfast-backend-16dd4b0bfa8f.herokuapp.com/api/v1'; // Replace with your actual base URL
 
+function jwt_decode(token) {
+    const payload = token.split('.')[1]; // Extract the payload part
+    return JSON.parse(atob(payload)); // Decode from base64 and parse JSON
+}
+
 /**
  * Set the authentication token.
  * @param {string} token - The OAuth2 token.
@@ -23,6 +28,10 @@ function getAuthToken() {
  */
 function clearAuthToken(token) {
     localStorage.removeItem('authToken');
+}
+
+function getUserData(){
+    return jwt_decode(getAuthToken());
 }
 
 /**
