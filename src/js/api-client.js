@@ -2,6 +2,11 @@
 // const BASE_URL = 'https://ec2-15-207-110-230.ap-south-1.compute.amazonaws.com/api/v1'; // Replace with your actual base URL
 const BASE_URL = 'https://vfast-backend-16dd4b0bfa8f.herokuapp.com/api/v1'; // Replace with your actual base URL
 
+function jwt_decode(token) {
+    const payload = token.split('.')[1]; // Extract the payload part
+    return JSON.parse(atob(payload)); // Decode from base64 and parse JSON
+}
+
 /**
  * Set the authentication token.
  * @param {string} token - The OAuth2 token.
@@ -23,6 +28,10 @@ function getAuthToken() {
  */
 function clearAuthToken(token) {
     localStorage.removeItem('authToken');
+}
+
+function getUserData(){
+    return jwt_decode(getAuthToken());
 }
 
 /**
@@ -51,7 +60,7 @@ function clearAuthToken(token) {
  *     console.error('Login failed:', error.message);
  * });
  */
-function apiRequest(endpoint, options = {}, requiresAuth = false) {
+async function apiRequest(endpoint, options = {}, requiresAuth = false) {
     const url = `${BASE_URL}${endpoint}`;
     const headers = Object.assign(
         {
@@ -65,8 +74,6 @@ function apiRequest(endpoint, options = {}, requiresAuth = false) {
     if (requiresAuth && authToken) {
         headers['Authorization'] = `Bearer ${authToken}`;
     }
-
-    console.log(url)
 
     // Prepare AJAX settings
     const ajaxSettings = {
@@ -90,12 +97,16 @@ function apiRequest(endpoint, options = {}, requiresAuth = false) {
             let errorMessage = `Error ${jqXHR.status}: ${jqXHR.statusText}`;
             try {
                 const errorData = JSON.parse(jqXHR.responseText);
-                if (errorData.detail) {
-                    errorMessage = JSON.stringify(errorData.detail);
+                if (errorData.data) {
+                    errorMessage += " from server : " + JSON.stringify(errorData.data);
+                }
+                if (errorData.message) {
+                    errorMessage += " from server : " + JSON.stringify(errorData.message);
                 }
             } catch (e) {
                 // If response is not JSON or parsing fails, retain the default error message
-                console.log(e)
+                console.log("api-client.js:108", e);
+                console.log(jqXHR.responseText);
             }
             // Reject the promise with an Error object
             return Promise.reject(new Error(errorMessage));

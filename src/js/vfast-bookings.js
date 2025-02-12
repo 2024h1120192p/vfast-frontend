@@ -1,19 +1,19 @@
 // vfast-bookings.js
 
-/**
- * Get Availability Calendar
- * @param {string} start - The start date (e.g., '2024-12-01').
- * @param {string} end - The end date (e.g., '2024-12-31').
- * @returns {Promise<object>} The availability data.
- */
-async function getAvailability(start, end) {
-    const params = new URLSearchParams({ start, end });
-    const endpoint = `/api/v1/booking/availability?${params.toString()}`;
-    const response = await apiRequest(endpoint, {
-        method: 'GET',
-    }, true);
-    return response;
-}
+// /**
+//  * Get Availability Calendar
+//  * @param {string} start - The start date (e.g., '2024-12-01').
+//  * @param {string} end - The end date (e.g., '2024-12-31').
+//  * @returns {Promise<object>} The availability data.
+//  */
+// async function getAvailability(start, end) {
+//     const params = new URLSearchParams({ start, end });
+//     const endpoint = `/booking/availability?${params.toString()}`;
+//     const response = await apiRequest(endpoint, {
+//         method: 'GET',
+//     }, true);
+//     return response;
+// }
 
 /**
  * Request a Booking
@@ -21,9 +21,9 @@ async function getAvailability(start, end) {
  * @returns {Promise<object>} The response data.
  */
 async function requestBooking(bookingData) {
-    const response = await apiRequest('/api/v1/booking/booking-request', {
+    const response = await apiRequest('/booking/booking-request', {
         method: 'POST',
-        body: JSON.stringify(bookingData),
+        body: bookingData,
     }, true);
     return response;
 }
@@ -34,7 +34,7 @@ async function requestBooking(bookingData) {
  * @returns {Promise<object>} The response data.
  */
 async function confirmBooking(confirmData) {
-    const response = await apiRequest('/api/v1/booking/confirm-booking', {
+    const response = await apiRequest('/booking/confirm-booking', {
         method: 'POST',
         body: JSON.stringify(confirmData),
     }, true);
@@ -48,7 +48,7 @@ async function confirmBooking(confirmData) {
  */
 async function getBookingDashboard(reqDate = '') {
     const params = reqDate ? `?req_date=${encodeURIComponent(reqDate)}` : '';
-    const endpoint = `/api/v1/booking/booking-dashboard${params}`;
+    const endpoint = `/booking/booking-dashboard${params}`;
     const response = await apiRequest(endpoint, {
         method: 'GET',
     }, true);
@@ -62,7 +62,7 @@ async function getBookingDashboard(reqDate = '') {
  */
 async function getBookingStatistics(reqDate = '') {
     const params = reqDate ? `?req_date=${encodeURIComponent(reqDate)}` : '';
-    const endpoint = `/api/v1/booking/booking-statistics${params}`;
+    const endpoint = `/booking/booking-statistics${params}`;
     const response = await apiRequest(endpoint, {
         method: 'GET',
     }, true);
@@ -76,7 +76,7 @@ async function getBookingStatistics(reqDate = '') {
  */
 async function getBookingRequests(reqDate = '') {
     const params = reqDate ? `?req_date=${encodeURIComponent(reqDate)}` : '';
-    const endpoint = `/api/v1/booking/booking-requests${params}`;
+    const endpoint = `/booking/booking-requests${params}`;
     const response = await apiRequest(endpoint, {
         method: 'GET',
     }, true);
@@ -88,20 +88,53 @@ async function getBookingRequests(reqDate = '') {
  * @returns {Promise<object>} The user's bookings data.
  */
 async function getUserBookings() {
-    const endpoint = '/api/v1/booking/user-bookings';
+    const endpoint = '/booking/user-bookings';
     const response = await apiRequest(endpoint, {
         method: 'GET',
     }, true);
     return response;
 }
 
-// (function ($) {
-//     $("#bookingForm").on(
-//         'submit', 
-//         function (e) {
-//             e.preventDefault();
 
-//             window.location.href = "./dashboard.html"
-//         }
-//     );
-// })(jQuery);
+$("#bookingForm").on('submit', function (e) {
+    e.preventDefault();
+
+    let check_in_date = new Date($("#startDate").val());
+    check_in_date = `${check_in_date.getFullYear()}-${String(check_in_date.getMonth() + 1).padStart(2, '0')}-${String(check_in_date.getDate()).padStart(2, '0')}`;
+
+    let check_out_date = new Date($("#endDate").val());
+    check_out_date = `${check_out_date.getFullYear()}-${String(check_out_date.getMonth() + 1).padStart(2, '0')}-${String(check_out_date.getDate()).padStart(2, '0')}`;
+
+    if (!$('#agreeTerms').is(':checked')) {
+        alert("Please check the box to agree with the Terms and Conditions.");
+        return;
+    }
+    
+    const booking_data = {
+        first_name: $("#firstName").val(),
+        last_name: $("#lastName").val(),
+        gender: $("#gender").val(),
+        purpose_of_visit: $("#purpose").val(),
+        relation_to_user: $("#relation_to_user").val(),
+        remarks: "",
+        email: $("#email").val(),
+        phone_number: $("#phone").val(),
+        check_in: check_in_date,
+        check_out: check_out_date,
+        room_type: $("#roomType").val(),
+        pax: $("#guestCount").val()
+    };
+
+    console.log(booking_data);
+
+    requestBooking(booking_data)
+    .then(response => {
+        alert("Your booking request has been submitted successfully.");
+        e.target.reset();
+        window.location.href = "./dashboard.html";
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("There was an error submitting your booking request.");
+    });
+});
