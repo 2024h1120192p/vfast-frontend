@@ -60,7 +60,7 @@ function getUserData(){
  *     console.error('Login failed:', error.message);
  * });
  */
-function apiRequest(endpoint, options = {}, requiresAuth = false) {
+async function apiRequest(endpoint, options = {}, requiresAuth = false) {
     const url = `${BASE_URL}${endpoint}`;
     const headers = Object.assign(
         {
@@ -74,8 +74,6 @@ function apiRequest(endpoint, options = {}, requiresAuth = false) {
     if (requiresAuth && authToken) {
         headers['Authorization'] = `Bearer ${authToken}`;
     }
-
-    console.log(url)
 
     // Prepare AJAX settings
     const ajaxSettings = {
