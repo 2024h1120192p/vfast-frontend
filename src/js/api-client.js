@@ -1,6 +1,7 @@
 // vfast-apiClient.js
 // const BASE_URL = 'https://ec2-15-207-110-230.ap-south-1.compute.amazonaws.com/api/v1'; // Replace with your actual base URL
-const BASE_URL = 'https://vfast-backend-16dd4b0bfa8f.herokuapp.com/api/v1'; // Replace with your actual base URL
+// const BASE_URL = 'https://vfast-backend-16dd4b0bfa8f.herokuapp.com/api/v1'; // Replace with your actual base URL
+const BASE_URL = 'https://unduly-simple-dory.ngrok-free.app/api/v1';
 
 function jwt_decode(token) {
     const payload = token.split('.')[1]; // Extract the payload part
